@@ -9,8 +9,9 @@ from io import StringIO
 # Autenticação com Google Sheets via st.secrets
 def conectar_google_sheets(nome_planilha):
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    cred_json = json.loads(json.dumps(st.secrets["google_service_account"]))
-    creds = ServiceAccountCredentials.from_json_keyfile_dict(cred_json, scope)
+    # Converte AttrDict para dict antes de serializar
+    cred_dict = dict(st.secrets["google_service_account"])
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(cred_dict, scope)
     client = gspread.authorize(creds)
     sheet = client.open(nome_planilha).sheet1
     return sheet
