@@ -1,4 +1,4 @@
-# 🎈 Blank app template
+# 🎈 Avaliar Disciplina
 
 A simple Streamlit app template for you to modify!
 
