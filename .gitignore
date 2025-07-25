@@ -1,4 +1,6 @@
-.streamlit/secrets.toml
+
+# Ignora toda a pasta .streamlit (incluindo secrets.toml e outros arquivos)
+.streamlit/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
